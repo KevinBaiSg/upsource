@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  upsource-server-instance:
+    image: jetbrains/upsource:2018.2.1154
+    restart: always
+    container_name: upsource-server-instance
+    hostname: upsource-server-instance
+    volumes:
+      - ./data/data:/opt/upsource/data
+      - ./data/conf:/opt/upsource/conf
+      - ./data/logs:/opt/upsource/logs
+      - ./data/backups:/opt/upsource/backups
+    ports:
+      - "8080:8080"
+    
